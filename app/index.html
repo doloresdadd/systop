@@ -66,6 +66,7 @@
 		<script>
 			
 			const settingsForm = document.getElementById('settings-form')
+			const nav = document.getElementById('nav')
 
 			 // Get settings
 			 ipcRenderer.on('settings:get', (e, settings) => {
@@ -97,6 +98,12 @@
 				  alert.innerText = msg
 				  setTimeout(() => alert.classList.add('hide'), 3000)
 			  }
+
+			//   Toggle Nav
+
+			ipcRenderer.on('nav:toggle', () => {
+				nav.classList.toggle('hide')
+			})
 		</script>
 	</body>
 </html>
